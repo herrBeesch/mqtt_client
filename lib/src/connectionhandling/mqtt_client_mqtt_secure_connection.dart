@@ -30,6 +30,7 @@ class MqttSecureConnection extends MqttConnection {
         Completer<MqttClientConnectionStatus>();
     MqttLogger.log('MqttSecureConnection::connect');
     try {
+      MqttLogger.log('MqttSecureConnection::connect - with badCertificateCallback');
       SecureSocket.connect(server, port, context: context)
           .then((SecureSocket socket) {
         MqttLogger.log('MqttSecureConnection::connect - securing socket');
